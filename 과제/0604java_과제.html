@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+    // 세 개의 변수 선언
+    let num1, num2, num3;
+
+    // 입력 메시지 출력 및 값 입력
+    num1 = Number(prompt("첫 번째 숫자를 입력하세요: "));
+    num2 = Number(prompt("두 번째 숫자를 입력하세요: "));
+    num3 = Number(prompt("세 번째 숫자를 입력하세요: "));
+
+    // 모든 숫자가 다를 때까지 반복적으로 입력 요청
+    while (num1 === num2 || num1 === num3 || num2 === num3) {
+    if (num1 === num2) {
+        num2 = Number(prompt("첫 번째 숫자와 두 번째 숫자가 같습니다. 다시 입력하세요: "));
+    } else if (num1 === num3) {
+        num3 = Number(prompt("첫 번째 숫자와 세 번째 숫자가 같습니다. 다시 입력하세요: "));
+    } else {
+        num2 = Number(prompt("두 번째 숫자와 세 번째 숫자가 같습니다. 다시 입력하세요: "));
+        }
+    }
+
+    // 최댓값 계산 및 출력
+    let max = Math.max(num1, num2, num3);
+        document.write("가장 큰 숫자는 " + max + "입니다.");
+    </script>
+</head>
+<body>
+ 
+
+</body>
+</html>
