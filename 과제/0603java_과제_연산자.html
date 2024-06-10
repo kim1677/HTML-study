@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+    //  과제 1.
+    //  소주 1잔에 수명이 2분 단축 된다.
+    //  어떤 사람이 20년동안 소주를 마셨다.
+    //  하루에 몇잔씩 마시는지 입력 받기 ( prompt 로 )
+    //  이사람의 수명은 총 몇분 단축 되었는가?
+    //                 총 몇 시간 단축 되었는가?
+    //                 총 몇 일 단축 되었는가?   
+    //  모든 값은 정수만 출력 
+
+    num1 = parseInt(prompt("하루에 소주를 몇 잔 마십니까? (정수로 입력해주세요)"), 10);
+
+    //  수명 단축 계산
+    num2 = num1 * 2;  // 하루에 단축되는 수명 (분)
+    num3 = 20 * 365;  // 20년 동안의 총 일수
+
+    //  20년 동안 단축된 총 수명 (분)
+    num4 = num2 * num3;
+
+    //  단축된 총 수명 (시간, 일)
+    num5 = Math.floor(num4 / 60);   //  단축된 시간
+    num6 = Math.floor(num4 / 24);   //  단축된 일
+
+    //  결과 출력
+    document.write("오늘하루 " + num1 + "잔을 마셨습니다.");
+    document.write("<br>총 " + num4 + "분 단축되었습니다.");
+    document.write("<br>총 " + num5 + "시간 단축되었습니다.");
+    document.write("<br>총 " + num6 + "일 단축되었습니다.");
+
+
+
+    // 과제 2.
+    // 두개의 주사위를 던져서  같은 값이 나온다면 당첨, 아니라면 꽝 출력
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
