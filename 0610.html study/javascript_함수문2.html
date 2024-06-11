@@ -6,38 +6,69 @@
     <title>Document</title>
 
     <script>
+    /*
+    
+        함수 형태
+        1. 매개변수와 반환값이 없는 함수
+            function eat(){
+                document.write("나는 샌드위치 먹었다");
+            }
 
-        function save(){
-            //  input   태그에 입력한 내용을 ul#list에 목록으로 출력하라
-            var text =document.querySelector("#data").value;
-            //       =document.getElementById("data").value;
-            var list =document.getElementById("list");          // list 변수에 ul#list 태그 저장
-                                                                // ul 태그의 객체가 list 변수에 저장
+        2. 매개변수는 있고 반환값이 없는 함수
+            function eat( food ){
+                document.write("나는 "+food+" 먹었다");
+            }
 
-            list.innerHTML = list.innerHTML + "<li>" +text+ "</li>";
+        3. 매개변수는 없고 반환값이 있는 함수
+            function pickfood(){
+                var food = "청국장";
+                return food; // 반환
+            }
 
-        }
+        4. 매개변수도 있고 반환값도 있는 함수
+            function eat( food ){
+                var str = "나는" + food + "먹었다";
+                return str; // 반환
+            }
 
-        //  addEventListener - 이벤트 등록 시키는 함수
-        //  addEventListener( 이벤트명, )
+        반환이 무엇인가?
+        return 이라고 한다.
+        함수가 호출된 위치에 값을 되돌려 놓은 방법
 
-        window.onload = function(){
-        document.getElementById("td1").addEventListener( 'click', save );
-        }
+        var ment = eat('냉면');
+
+        함수는 기능(목적)을 정하고 정의해야한다.
+        함수의 기능을 벗아나는 코드 작성은 프로그램동작의 결함, 장애가 될 수 있다.
+
+    */
+
+    function total(){
+        var kor=90;
+        var mat=90;
+        var eng=90;
+        var tot = kor+mat+eng;
+        return tot;
+    }
+
+    // var scoreTotal = total()
+    // document.write( scoreTotal );
+
+    window.onload-function(){   //  onload는 브라우저에 화면 표시가 끝나면 발생하는 이벤트이다.
+                                //  html 문서의 모든 리소스(html, css, javascript, 이미지 등)가 브라우저에
+                                //  완전히 로드되면 발생하는 이벤트이다.    -   window.onload
+                                //  onload는 태그에서 발생한다.     img, iframe, script, link, video 등등
+            document.getElementById("power").addEventListener('click', );
+
+    }
+
+    function buttonpass(){
+        alert("등록됨");
+    }
+
 
     </script>
 </head>
 <body>
-    
-    <h2>오늘의 나를 칭찬하기</h2>
-    <input type="text" id="data">
-
-    <button onclick="save()">저장</button>
-
-    <ul id="list">
-        <li>아침에 밥먹고 나온거 잘했어</li>
-        <li>점심 먹은거 잘했다.</li>
-    </ul>
 
     <table id="board">
         <tr>
@@ -51,12 +82,11 @@
             <td id="td6"></td>
         </tr>
     </table>
-
     <style>
-        #board{ border-collapse: collapse; }
-        #board tr td{
-            border: 1px solid black;
-            width: 100px; height: 100px;
+        #board{  border-collapse: collapse;  }
+        #board tr td{ 
+            border:1px solid black; 
+            width:100px; height:100px;
         }
     </style>
 
