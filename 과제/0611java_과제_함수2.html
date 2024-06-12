@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+    <script scr="./static/javascript/homework.js">
+
+        // 1부터 50까지의 숫자를 배열에 담는 함수
+        function makeNumberList() {
+            const numbers = [];
+            for (let i = 1; i <= 50; i++) {
+                numbers.push(i);
+            }
+            return numbers;
+        }
+
+        // 랜덤 숫자 4개를 추출하여 배열에 담는 함수
+        function getRandomNumbers(numbers) {
+            const randomNumbers = [];
+            for (let i = 0; i < 4; i++) {
+                const randomIndex = Math.floor(Math.random() * numbers.length);
+                randomNumbers.push(numbers.splice(randomIndex, 1)[0]);
+            }
+            return randomNumbers;
+        }
+
+        // 랜덤 숫자를 테이블에 출력하는 함수
+        function makeTable() {
+            const numberTable = document.getElementById('numberTable');
+            numberTable.innerHTML = ''; // 이전 내용 지우기
+
+            const numbers = makeNumberList();
+
+            for (let i = 0; i < 5; i++) {
+                const row = numberTable.insertRow();
+                const randomNumbers = getRandomNumbers(numbers.slice()); // 남은 숫자들로 추출
+
+                for (let j = 0; j < 4; j++) {
+                    const cell = row.insertCell();
+                    cell.textContent = randomNumbers[j];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>1~50 사이의 숫자를 랜덤하게 출력합니다.</h1>
+    <button onclick="makeTable()">숫자 출력</button>
+    <table id="numberTable"></table>
+    
+</body>
+</html>

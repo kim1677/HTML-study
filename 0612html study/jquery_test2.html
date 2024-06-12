@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <!-- jquery CDN -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script>
+    // 순서 작성
+    // 1. input 입력하기
+    // 2. 엔터 또는 버튼 클릭하기
+    // 3. input 값 중에 빈값 있는지 없는지
+    //      3.1 빈값이라면
+    //          -   알림으로 알려주고 빈값 다시 입력하기    (1번 부터 다시)
+    //      3.2 빈값이 없다면
+    //          -   다음 진행   (4번)
+    // 4. 생년월일 8자리 확인
+    //      4.1 8자리라면
+    //          -   다음진행    (5번)
+    //      4.2 8자리 아니라면
+    //          -   생년월일 다시입력하기 (1번 부터 다시)
+    // 5. 입력 값 출력
+
+    $(function(){
+        $("#name").hide();
+        $("#age").hide(); 
+        $("#nameInput").click(function(){  $("#name").show();   });
+        $("#ageInput").click(function(){  $("#age").show();     });
+
+        $("#enroll").click(join)
+
+        $(document).keyup   (   function(  e   ){
+            if( e.keyCode === 13 ){
+                join();
+            };
+        });
+    });
+
+    /*
+        이름입력 버튼과 나이입력 버튼을 각각 클릭하여 input 나타내어 이름과 나이 입력하세요.
+        들록 버튼을 클릭하여 화면에 이름, 나이, 태어난 년도 출력하세요    
+    */
+
+    function join(){
+        var userName = $("#name").val();
+        var userAge = $("#age").val();
+
+        var isCheck = allinputCheck( userName, userAge);
+
+        if(isCheck){
+            $("#nameView ").html(userName);
+            $("#ageView ").html(userAge);
+        }
+    }
+
+    function allinputCheck( name, age){
+        if(name === ''){
+            alert("이름을 입력하세요");
+            $("#name").focus();
+            return false;
+        }else if(age === ''){
+            alert("나이를 입력하세요")
+            $("#age").focus();
+            return false;
+        }
+
+        return true;
+    }
+
+
+    </script>
+
+<body>
+    
+    <button id="nameInput">이름입력</button> <input type="text" id="name"> <br>
+    <button id="ageInput">나이입력</button> <input type="text" id="age"> <br>
+    <button id="enroll">등록</button>
+    <hr>
+    <div>
+        이름 : <b id="nameView"></b> <br>
+        나이 : <b id="ageView"></b> <br>
+        태어난 년도 : <b id="yearView"></b> <br>
+    </div>
+
+</body>
+</html>
