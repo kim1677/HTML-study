@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1>Mini Games</h1>
+    <div id="menu">
+        <button onclick="startGame('coinFlip')">동전 앞면 뒷면 맞추기</button>
+        <button onclick="startGame('rockPaperScissors')">가위바위보</button>
+        <button onclick="startGame('bingo')">빙고</button>
+    </div>
+    
+    <div id="game" class="game-container">
+        <button onclick="goBack()">뒤로가기</button>
+        <div id="game-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
