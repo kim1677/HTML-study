@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        /*
+            여행 사이트를 제작하였다.
+            몇박 몇일 여행 가는지, 여행지가 어디인지
+            입력하면 자동으로 여행 스케줄을 만들어준다.
+            생성된 스케줄은 로그인한 계정으로 저장된다.
+
+            계정명, 몇박 몇일, 여행지를 출력하고, 경비는 얼마인지 출력하시오.
+
+         */
+            id = "김경제";
+            schedule = "3박4일";
+            destination = "제주도";
+            expenses = 300000;
+
+
+            document.write("이름 : " +id+ "<br>", "일정기간 : " +schedule+ "<br>", "행선지 : " +destination+ "<br>", "경비 : " +expenses+"<br>");
+            
+        
+        
+        /*
+            사과 10박스, 오렌지 20박스, 포도 5박스를 구매하였다.
+            사과 1박스에 30000원, 오렌지 1박스에 32000원, 포도 1박스에 40000원 이라면
+            총 지출 금액은 얼마인가?
+        */
+            apple = 10;
+            orange = 20;
+            Grape = 5;
+
+            apple_box = 30000;
+            orange_box = 32000;
+            Grape_box = 40000;
+
+            apple_total = apple * apple_box;
+            orange_total = orange * orange_box;
+            Grape_total = Grape * Grape_box;
+
+            total = apple_total + orange_total + Grape_total;
+            document.write("<br>총 금액 : " +total);
+
+
+
+
+        // 문제.1
+        // 영희가 쇼핑을 한다. 여름휴가를 위해 래쉬가드를 사려고 한다.
+        // 3시간을 돌아다니다 드디어 마음에 드는 래쉬가드를 발견했다.
+        // 정가 210,000원인데 오픈100일 기념으로 30% 세일 한다.
+        // 영희 통장에는 160,000원 있다. 구매할 수 있을까?
+        
+        money = 150000;
+        price = 210000;
+        saile = 0.3;
+        Purchase = price-(price*saile);
+
+        if( money >= Purchase ){
+            document.write("<br>구매가능.");
+        }else{
+            document.write("<br>구매불가.");
+        }
+
+
+
+
+        // 문제.2
+        // 영진이가 주말에 열심히 공부하기 위해 시간표를 짜고 있다.
+        // 잠자는시간, 밥먹는시간, 공부하는시간, 약간의 쉬는시간으로 시간표를 만든다.
+        // 공부하는 시간이 하루 8시간 이상은 되야 공부했다 할 수 있다면.
+        // 잠은 총 몇 시간을 자야하는가 에 대한 자는 시간을 입력하여
+        // 공부 8시간 이상 편상 가능 여부를 출력하세요
+        // (한끼먹는데 1시간 걸린다. 총 쉬는 시간은  6시간이다.)
+
+        하루시간 = 24;
+        공부시간 = 8;
+        식사시간 = 3;
+        쉬는시간 = 3;
+
+        편성시간 = 하루시간 - 식사시간 - 쉬는시간 ;
+        자는시간  = 8;
+
+        if( 편성시간 - 자는시간 >= 공부시간){
+            document.write("<br>8시간 이상 공부가능.");
+        }else {
+            document.write("<br>8시간 이상 공부불가.");
+        }
+
+
+
+        // 문제.3
+        // 로그인을 시도하는데 비밀번호가 5번 틀리면 하루동안 정지된다.
+        // 아이디와 비밀번호를 입력하여 일치하면 로그인 성공이라고 출력
+        // 아니라면 다시입력해라 라고 출력
+        // (아이디 : 집가, 비밀번호 : 싫어)
+
+        id = "집가";
+        pw = "싫어";
+
+        if( id == "집가" ){
+            if(pw == "싫어" ){
+                document.write("<br>");
+            }else{
+                document.write("<br>");
+            }
+        }else{
+            document.write("다시 입력하세요")
+        }
+
+        // else if는 일반적으로 대상은 하나인데 기준에 따라 실행되는 내용이 다른경우에 사용된다.
+        /*
+            bank = "우리은행";
+            it(bank == "국민은행"){
+                console.log( "국민은행 계죄 조회 실행" );
+            }else if( bank == "농협"){
+                console.log( "농협은행 계죄 조회 실행" );
+            }else if( bank == "우리은행"){
+                console.log( "우리은행 계죄 조회 실행" );
+
+        */
+
+
+
+        // 문제.4
+        // 엑스포 분수 공원에 축제를 한다.
+        // 축제장에 다트 던지기 게임을 했다.
+        // 다트를 던져서 풍선3개 터지면 열쇠고리 획득 풍선 5개 이상 터지면 작은인형 획득
+        // 풍선 9개이상 터지면 큰인형 획득, 풍선 15개 이상 터지면 드론을 획득 할 수 있다
+        
+        풍선15개 = 15;
+        풍선9개 = 9;
+        풍선5개 = 5;
+        풍선3개 = 3;
+        다트 = 15;
+
+        // 조건에 따른 보상 계산
+        if (다트 >= 풍선15개) {
+            document.write("드론을 획득하셨습니다!");
+        } else if (다트 >= 풍선9개) {
+            document.write("큰 인형을 획득하셨습니다!");
+        } else if (다트 >= 풍선5개) {
+            document.write("작은 인형을 획득하셨습니다!");
+        } else if (다트 == 풍선3개) {
+            document.write("열쇠고리를 획득하셨습니다!");
+        } else {
+            document.write("아쉽지만 획득할 수 있는 보상이 없습니다.");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
